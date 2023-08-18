@@ -26,7 +26,7 @@ describe("TC N°1 : Verificar suscripcion con formato de email valido.",()=>{
     });      
     
     Then("La pagina se recarga y se visualiza el siguiente mensaje.{string}",function(mensaje){
-        cy.wait(5000);
+        cy.wait(8000);
         elements_newsletter.Success_Message(mensaje).should("be.visible");
     });
 

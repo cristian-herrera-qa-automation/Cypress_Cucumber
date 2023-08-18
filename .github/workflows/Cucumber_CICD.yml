@@ -22,5 +22,5 @@ jobs:
       run: npx cypress run --spec "cypress/integration/**/*.feature" --browser chrome
 
     - name: Run Cypress Cucumber Tests in Firefox
-      run: npx cypress run --spec "cypress/integration/**/*.feature" --browser firefox
+      run: npx cypress run --spec "cypress/integration/**/*.feature" --browser edge
   
