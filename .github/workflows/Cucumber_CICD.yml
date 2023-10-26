@@ -7,7 +7,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
@@ -30,3 +30,4 @@ jobs:
     - name: Run Cypress Cucumber Test in Chrome
       run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
   #    run: npx cypress run --spec cypress/integration/*/**/Auditor_2.feature --browser chrome
+  #   run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
