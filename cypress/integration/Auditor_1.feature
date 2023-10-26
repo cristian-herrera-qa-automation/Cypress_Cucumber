@@ -11,7 +11,7 @@ Feature: SECCION LOGIN - PopUp -EL AUDITOR
             | username |               | password| 
             | test1234@hola.com |      |Losloros12|
 
-    Scenario Outline: TC N°2 LOGIN INCORRECTO CON CUENTA EXISTENTE.
+    Scenario Outline: TC N°2 LOGIN : Inicio de sesion Invalido con datos Incorrectos.
         When El usuario introduce datos incorrectos en los campos '<username1>' y '<password1>'
         And Hace click en el Boton ENTRAR.!!!
         Then Aparece un msj con un mensaje de alerta.

@@ -15,8 +15,8 @@ const randomEmail = Math.random().toString(20).substring(2,20)+"@gmail.com";
 
 Given("Que el usuario NO tiene una cuenta existente.",function(){
     cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar")
-    cy.wait(6000);
+    cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    cy.CERRAR_POP_UP();
 });
 
 And("Se encuentra en la seccion REGISTRO - PopUp.",function(){
@@ -30,8 +30,8 @@ describe("TC N°1 REGISTRO EXITOSO - CAMPOS OBLIGATORIOS.",()=>{
         elements_register.input_nombre().type(nombre_random);
         elements_register.input_apellido().type(apellido_random);
         elements_register.input_correo().type(randomEmail);
-        elements_register.input_password(contraseña);
-        elements_register.input_confirm_password(confirmarContraseña);
+        elements_register.input_password().type(contraseña);
+        elements_register.input_confirm_password().type(confirmarContraseña);
         cy.wrap(nombre_random).as("NOMBRE_RANDOM");
         cy.wrap(apellido_random).as("APELLIDO_RANDOM");
         cy.wrap(randomEmail).as("EMAIL_RANDOM")
@@ -40,7 +40,6 @@ describe("TC N°1 REGISTRO EXITOSO - CAMPOS OBLIGATORIOS.",()=>{
         // console.log(this.EMAIL_RANDOM);
     });    
     And("Hace click en el Boton REGISTRARSE.",function(){
-        cy.wait(2000);
         elements_register.BTN_REGISTRARSE();
         cy.wait(3000);
     });
@@ -66,7 +65,6 @@ describe("TC N°2 REGISTRO INCORRECTO - FORMATO DE EMAIL INVALIDO.",()=>{
     });
 
     And("Hace click en el Boton REGISTRARSE.",function(){
-        cy.wait(2000);
         elements_register.BTN_REGISTRARSE();
     });
     
@@ -86,7 +84,6 @@ describe("TC N°3 REGISTRO INCORRECTO - CAMPOS VACIOS.",()=>{
     });
     
     And("Hace click en el Boton 'REGISTRARSE'.",function(){
-        cy.wait(2000);
         elements_register.BTN_REGISTRARSE();      
     });
     

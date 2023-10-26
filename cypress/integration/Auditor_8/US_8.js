@@ -13,8 +13,8 @@ const elements_checkout = new Checkout_Product();
 
 Given("Que usuario se encuentra en el Home Page.",function(){
     cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar")
-    cy.wait(5000);
+    cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    cy.CERRAR_POP_UP();
     
 });
 
@@ -22,20 +22,15 @@ describe("TC N°1 : Verificar que la cantidad del producto agregado sea igual en
 
     When("Se posiciona en cualquier categoria {string} y acceda al PDP del primer producto.",function(categoria){
         elements_pages.Acceder_Resmas(categoria);
-        cy.wait(3000);
         elements_PLP.product().first().click({force:true});
-        cy.wait(8000);
     });
 
     And("Haya agregado al carrito de compras la cantidad de '3'.",function(){
         elements_PDP.Quantity().within(()=>{
             elements_PDP.Quantity_Sumar().click({force:true});
-            cy.wait(3000);
             elements_PDP.Quantity_Sumar().click({force:true});
-            cy.wait(3000);
             elements_PDP.Quantity_Input_Value().find("input").invoke("val").should("eq","3");
-            elements_PDP.Agregar_checkout().click({force:true});
-            cy.wait(8000);                 
+            elements_PDP.Agregar_checkout().click({force:true});                
           });
     });
 

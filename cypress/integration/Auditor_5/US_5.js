@@ -11,9 +11,8 @@ describe("TC N°1 : Verificar que la lista de productos este visible.",()=>{
 
     Given("Que el usuario se encuentra en el Home Page.",()=>{
         cy.visit("https://www.elauditor.com.ar/home")
-        cy.url().should("include","elauditor.com.ar")
-        cy.wait(6000);
-
+        cy.url().should("include","elauditor.com.ar",{timeout:5000})
+        cy.CERRAR_POP_UP();
     });
     
     When("El usuario hace click en la categoria {string}",function(categoria){
@@ -36,8 +35,8 @@ describe("TC N°2 : Verificar que los datos del 1° producto de la lista esten v
 
     Given("El usuario se encuentra en la seccion 'RESMAS'. {string} - {string}",(categoria_resmas,path_resmas)=>{
         cy.visit("https://www.elauditor.com.ar/home")
-        cy.url().should("include","elauditor.com.ar")
-        cy.wait(6000);
+        cy.url().should("include","elauditor.com.ar",{timeout:6000})
+        cy.CERRAR_POP_UP();
         elements_pages.Acceder_Resmas(categoria_resmas);
         elements_pages.URL_path_Resmas(path_resmas);
 
@@ -46,7 +45,6 @@ describe("TC N°2 : Verificar que los datos del 1° producto de la lista esten v
     When("Hace click en el 1° producto de la lista.",function(){
        elements_resmas.Product_1().first().click({force:true});
        cy.wait(4000);
-
     });    
     
     Then("Se visualiza exitosamente su IMAGEN , DISPONIBILIDAD Y PRECIO.",function(){

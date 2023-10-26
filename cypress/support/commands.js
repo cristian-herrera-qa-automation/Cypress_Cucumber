@@ -3,12 +3,11 @@
 // import { LOGIN } from "../Pages/Login";
 // const elements_login= new LOGIN();
 
-// Cypress.Commands.add("CERRAR_POP_UP",()=>{ 
-//     cy.wait(5000);
-//     if (cy.get('#mp-popup-template3')) {
-//         cy.get('#bio_ep_close').click();
-//     };
-// });
+ Cypress.Commands.add("CERRAR_POP_UP",()=>{ 
+     if (cy.get('#mp-popup-template3')) {
+         cy.get('#bio_ep_close').click();
+     };
+ });
 
 // Cypress.Commands.add("Logearse_exitosamente",()=>{
 //     cy.wait(6000);

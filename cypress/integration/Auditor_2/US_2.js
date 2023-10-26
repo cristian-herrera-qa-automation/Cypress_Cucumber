@@ -7,8 +7,8 @@ const elements_login = new LOGIN();
 
 Given("DADO QUE EL USUARIO SE ENCUENTRA EN LA SECCION LOGIN - PopUp",function(){
     cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar")
-    cy.wait(6000);
+    cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    cy.CERRAR_POP_UP();
     elements_login.INGRESAR_label();
 });
 
@@ -25,11 +25,11 @@ describe("TC N°1 LOG-OUT EXITOSO CON CUENTA EXISTENTE.",()=>{
     });
     
     Then("El usuario se logea exitosamente y es redirigido a la Home Page.",function(){
-        cy.wait(5000);
+       // cy.wait(5000);
         elements_login.URL_HOMEPAGE();
     });
     And("Hace click en el boton CERRAR SESION.",function(){
-        cy.wait(7000);
+       // cy.wait(7000);
         elements_login.BTN_CerrarSession().click({force:true});
     });
     Then("Luego de 5 segundos es redirigido a la Home Page.",function(){

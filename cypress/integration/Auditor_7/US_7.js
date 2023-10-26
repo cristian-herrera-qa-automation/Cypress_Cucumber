@@ -13,8 +13,8 @@ describe("TC N°1 : Verificar suscripcion con formato de email valido.",()=>{
 
     Given("Que el usuario se encuentra en el footer del Home Page.",()=>{
         cy.visit("https://www.elauditor.com.ar/home")
-        cy.url().should("include","elauditor.com.ar")
-        cy.wait(6000);
+        cy.url().should("include","elauditor.com.ar",{timeout:5000})
+        cy.CERRAR_POP_UP();
         cy.scrollTo("bottom");
 
     });
@@ -26,7 +26,6 @@ describe("TC N°1 : Verificar suscripcion con formato de email valido.",()=>{
     });      
     
     Then("La pagina se recarga y se visualiza el siguiente mensaje.{string}",function(mensaje){
-        cy.wait(8000);
         elements_newsletter.Success_Message(mensaje).should("be.visible");
     });
 
@@ -36,8 +35,8 @@ describe("TC N°2 : Intentar suscribirse con formato de email invalido.",()=>{
 
     Given("Que el usuario se encuentra en el footer del Home Page.",()=>{
         cy.visit("https://www.elauditor.com.ar/home")
-        cy.url().should("include","elauditor.com.ar")
-        cy.wait(6000);
+        cy.url().should("include","elauditor.com.ar",{timeout:5000})
+        cy.CERRAR_POP_UP();
         cy.scrollTo("bottom");
 
     });

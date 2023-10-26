@@ -6,6 +6,6 @@ export class SEARCH_INPUT{
 
           search(){return cy.get(this.input_search);}
           Buscar(){return cy.get(this.btn_buscar);}
-          Titulo(){return cy.get(this.Class_titulo)}
+          Titulo(){return cy.get(this.Class_titulo,{timeout:3000})}
           List_products(){return cy.get(this.Class_list_products)}
 }

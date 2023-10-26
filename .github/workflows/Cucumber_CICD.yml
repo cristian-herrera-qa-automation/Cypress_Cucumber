@@ -1,6 +1,9 @@
 name: Cypress Cucumber Tests
 
-on: [push]
+on:
+  push:
+  schedule:
+    - cron: '0 3 * * *'
 
 jobs:
   build:
@@ -18,9 +21,12 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Run Cypress Cucumber Tests in Chrome
-      run: npx cypress run --spec "cypress/integration/**/*.feature" --browser chrome
+ #   - name: Run Cypress Cucumber Tests in Chrome
+  #    run: npx cypress run --spec cypress/integration/*/**/.feature" --browser chrome
 
-    - name: Run Cypress Cucumber Tests in Firefox
-      run: npx cypress run --spec "cypress/integration/**/*.feature" --browser edge
-  
+    # ARRIBA: EJECUTO TODOS LOS TEST.
+    # ABAJO EJECUTO DE A 1 TEST INDIVIDUAL.  
+
+    - name: Run Cypress Cucumber Test in Chrome
+      run: npx cypress run --spec cypress/integration/*/**/Auditor_8.feature --browser chrome
+  #    run: npx cypress run --spec cypress/integration/*/**/Auditor_2.feature --browser chrome

@@ -6,8 +6,8 @@ const elements_login = new LOGIN();
 
 Given("DADO QUE EL USUARIO SE ENCUENTRA EN LA SECCION LOGIN - PopUp",function(){
     cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar")
-    cy.wait(5000);
+    cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    cy.CERRAR_POP_UP();
     elements_login.INGRESAR_label();
 });
 And("Ya posee una cuenta registrada previamente.",function(){});
@@ -29,7 +29,7 @@ describe("TC N°1 LOGIN EXITOSO CON CUENTA EXISTENTE.",()=>{
 
 });
 
-describe("TC N°2 LOGIN INCORRECTO CON CUENTA EXISTENTE.",()=>{
+describe("TC N°2 LOGIN : Inicio de sesion Invalido con datos Incorrectos.",()=>{
 
      When("El usuario introduce datos incorrectos en los campos {string} y {string}",function(username1,password1){
          elements_login.email(username1);

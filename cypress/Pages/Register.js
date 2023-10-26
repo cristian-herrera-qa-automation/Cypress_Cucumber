@@ -21,7 +21,7 @@ export class REGISTER{
     input_correo(){return cy.get(this.correo_electronico)}
     input_password(){ return cy.get(this.contraseña)}
     input_confirm_password(){return cy.get(this.confirmation_contraseña)}
-    BTN_REGISTRARSE(){return cy.get(this.btn_registrarse).click();}
+    BTN_REGISTRARSE(){return cy.get(this.btn_registrarse,{timeout:3000}).click({force:true});}
     MESSAGE_email_Existente(){return cy.contains(this.Txt_emailExistente);}
     VALIDATOR_EMAIL(){return cy.contains(this.TXT_VALIDATOR_FORMAT_EMAIL)};
     Validator_CampoObligatorio_Nombre(){return cy.get(this.ID_validator_campo_obligatorio_Nombre)};

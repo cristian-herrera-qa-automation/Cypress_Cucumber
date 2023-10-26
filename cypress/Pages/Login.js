@@ -13,13 +13,13 @@ export class LOGIN{
 
 
        INGRESAR_label(){cy.contains(this.ingresar_label).click();}
-       URL_HOMEPAGE(){cy.url().should("include",this.Url_homepage);}
+       URL_HOMEPAGE(){cy.url().should("include",this.Url_homepage,{timeout:5000});}
        email(correo){cy.get(this.input_email).type(correo);}
        password(contraseña){cy.get(this.input_password).type(contraseña);}
        BTN_ENTRAR(){cy.get(this.btn_entrar).click();}
        BIENVENIDO(){return cy.get(this.Class_Login_Welcome);}
-       Mensaje_InicioSession_Incorrecto(){return cy.contains(this.Msj_InicioSesion_Incorrecto)};
-       BTN_CerrarSession(){ return cy.contains(this.Txt_Btn_CerrarSession);}
+       Mensaje_InicioSession_Incorrecto(){return cy.contains(this.Msj_InicioSesion_Incorrecto,{timeout:3000})};
+       BTN_CerrarSession(){ return cy.contains(this.Txt_Btn_CerrarSession,{timeout:7000});}
        Alert_ValidacionEmail(){return cy.get(this.Msj_Validator_Email);}
        Alert_ValidacionPassword(){return cy.get(this.Msj_Validator_Password);}
        Msj_CerrarSession(){return cy.contains(this.MSJ_CERRAR_SESSION)};

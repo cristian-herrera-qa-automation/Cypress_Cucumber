@@ -13,7 +13,7 @@ Feature: EL AUDITOR REGISTRO - NEW USER.
              |  Magdalenaoficial12 | Magdalenaoficial12  |
 
     Scenario Outline: TC N°2 REGISTRO INCORRECTO - FORMATO DE EMAIL INVALIDO.
-        When El usuario completa los campos 'NOMBRE' , 'APELLIDO' , '<Contraseña2>' Y '<confirmarContraseña2>' con datos validos.
+        When El usuario completa los campos 'NOMBRE' , 'APELLIDO' , '<contraseña2>' Y '<confirmarContraseña2>' con datos validos.
         And Completa el campo obligatorio CORREO ELECTRONICO con un formato invalido.
         And  Hace click en el Boton REGISTRARSE.
         Then Aparece el VALIDATOR correspondiente en dicho campo.

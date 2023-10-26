@@ -9,6 +9,6 @@ export class Newsletter_Suscription{
           email(){return cy.get(this.input_email);}
           txt_titulo(){return cy.contains(this.titulo);}
           BTN_suscripcion(){return cy.get(this.btn_suscribirse);}
-          Success_Message(mensaje){return cy.contains(mensaje);}
+          Success_Message(mensaje){return cy.contains(mensaje,{timeout:8000});}
           Error_Mensaje(){return cy.get(this.ID_Message_error);}
 };
