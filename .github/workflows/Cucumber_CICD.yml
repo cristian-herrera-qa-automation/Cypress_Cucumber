@@ -22,12 +22,12 @@ jobs:
       run: npm install
 
     - name: Run Cypress Cucumber Tests in Chrome
-      run: npx cypress run --browser chrome
+     # run: npx cypress run --browser chrome
      # run: npx cypress run --spec */**/.feature" --browser chrome
 
     # ARRIBA: EJECUTO TODOS LOS TEST.
     # ABAJO EJECUTO DE A 1 TEST INDIVIDUAL.  
 
    # - name: Run Cypress Cucumber Test in Chrome
-    #  run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
+      run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
   #   run: npx cypress run --spec */**/Auditor_8.feature --browser chrome

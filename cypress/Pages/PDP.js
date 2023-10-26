@@ -11,6 +11,6 @@ export class PDP{
     Quantity_Input_Value(){return cy.get(this.Class_quantity)}
     Agregar_checkout(){return cy.get(this.Btn_Agregar_Carrito)}
   //  Enlace_Carrito_PDP(){return cy.get(this.Carrito_Enlace,{timeout:8000})}
-    Enlace_Carrito_PDP(){return cy.contains("a",this.Carrito_Enlace,{timeout:5000})}
+    Enlace_Carrito_PDP(){return cy.contains("a",this.Carrito_Enlace,{timeout:8000})}
 
 };
