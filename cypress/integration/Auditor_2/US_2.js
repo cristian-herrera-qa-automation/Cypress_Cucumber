@@ -7,7 +7,7 @@ const elements_login = new LOGIN();
 
 Given("DADO QUE EL USUARIO SE ENCUENTRA EN LA SECCION LOGIN - PopUp",function(){
     cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    cy.url().should("include","elauditor.com.ar")
     cy.CERRAR_POP_UP();
     elements_login.INGRESAR_label();
 });

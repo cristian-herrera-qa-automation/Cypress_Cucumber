@@ -15,7 +15,7 @@ const randomEmail = Math.random().toString(20).substring(2,20)+"@gmail.com";
 
 Given("Que el usuario NO tiene una cuenta existente.",function(){
     cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    cy.url().should("include","elauditor.com.ar")
     cy.CERRAR_POP_UP();
 });
 

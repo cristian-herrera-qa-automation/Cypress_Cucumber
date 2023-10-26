@@ -35,7 +35,7 @@ describe("TC N°2 : Intentar suscribirse con formato de email invalido.",()=>{
 
     Given("Que el usuario se encuentra en el footer del Home Page.",()=>{
         cy.visit("https://www.elauditor.com.ar/home")
-        cy.url().should("include","elauditor.com.ar",{timeout:5000})
+        cy.url().should("include","elauditor.com.ar")
         cy.CERRAR_POP_UP();
         cy.scrollTo("bottom");
 

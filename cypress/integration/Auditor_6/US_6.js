@@ -8,7 +8,7 @@ describe("TC N°1 : Buscar un producto con el Search Input y verificar el titulo
 
     Given("Que el usuario se encuentra en el Home Page.",()=>{
         cy.visit("https://www.elauditor.com.ar/home")
-        cy.url().should("include","elauditor.com.ar",{timeout:6000})
+        cy.url().should("include","elauditor.com.ar")
         cy.CERRAR_POP_UP();
     });
     
