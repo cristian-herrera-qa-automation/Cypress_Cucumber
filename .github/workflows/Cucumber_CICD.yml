@@ -28,5 +28,5 @@ jobs:
     # ABAJO EJECUTO DE A 1 TEST INDIVIDUAL.  
 
     - name: Run Cypress Cucumber Test in Chrome
-      run: npx cypress run --spec cypress/integration/*/**/Auditor_8.feature --browser chrome
+      run: npx cypress run --spec cypress\integration\*\**\Auditor_8.feature --browser chrome
   #    run: npx cypress run --spec cypress/integration/*/**/Auditor_2.feature --browser chrome
