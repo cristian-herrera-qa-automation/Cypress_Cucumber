@@ -12,10 +12,11 @@ const elements_PLP = new PLP();
 const elements_checkout = new Checkout_Product();
 
 Given("Que usuario se encuentra en el Home Page.",function(){
-    cy.visit("https://www.elauditor.com.ar")
-    cy.url().should("include","elauditor.com.ar")
-    cy.CERRAR_POP_UP();
-    
+        cy.visit("https://www.elauditor.com.ar")
+        cy.url().should("include","elauditor.com.ar",{timeout:5000})
+    // cy.clearAllCookies();
+        cy.CERRAR_POP_UP()
+ 
 });
 
 describe("TC N°1 : Verificar que la cantidad del producto agregado sea igual en el Checkout.",()=>{

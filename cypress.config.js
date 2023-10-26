@@ -11,6 +11,6 @@ module.exports = defineConfig({
     },
     video: false,
     screenshotOnRunFailure: false,
-    experimentalRunAllSpecs:true
+    experimentalRunAllSpecs:true,   
   },
 });

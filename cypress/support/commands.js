@@ -4,7 +4,7 @@
 // const elements_login= new LOGIN();
 
  Cypress.Commands.add("CERRAR_POP_UP",()=>{ 
-     if (cy.get('#mp-popup-template3',{timeout:7000})) {
+     if (cy.get('#mp-popup-template3',{timeout:5000})) {
          cy.get('#bio_ep_close').click();
      };
     });
