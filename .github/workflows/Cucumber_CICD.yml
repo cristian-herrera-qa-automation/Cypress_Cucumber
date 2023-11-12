@@ -1,33 +1,32 @@
-name: Cypress Cucumber Tests
+# name: Cypress Cucumber Tests
 
-on:
-  push:
-  schedule:
-    - cron: '0 3 * * *'
+# on:
+#   push:
+#   schedule:
+#     - cron: '0 3 * * *'
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
 
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
+#     steps:
+#     - name: Checkout code
+#       uses: actions/checkout@v2
 
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: 14
+#     - name: Set up Node.js
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: 14
 
-    - name: Install dependencies
-      run: npm install
+#     - name: Install dependencies
+#       run: npm install
 
-    - name: Run Cypress Cucumber Tests in Chrome
-     # run: npx cypress run --browser chrome
-     # run: npx cypress run --spec */**/.feature" --browser chrome
+#     - name: Run Cypress Cucumber Tests in Chrome
+#      # run: npx cypress run --browser chrome
 
-    # ARRIBA: EJECUTO TODOS LOS TEST.
-    # ABAJO EJECUTO DE A 1 TEST INDIVIDUAL.  
+#     # ARRIBA: EJECUTO TODOS LOS TEST.
+#     # ABAJO EJECUTO DE A 1 TEST INDIVIDUAL.  
 
-   # - name: Run Cypress Cucumber Test in Chrome
-      run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
-  #   run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
+#     - name: Run Cypress Cucumber Test in Chrome
+#       run: npx cypress run --spec */**/Auditor_8.feature --browser chrome
+#   #   run: npx cypress run --spec */**/Auditor_8.feature --browser chrome

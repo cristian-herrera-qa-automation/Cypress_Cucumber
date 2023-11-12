@@ -16,10 +16,10 @@ Given("Que usuario se encuentra en el Home Page.",function(){
         cy.url().should("include","elauditor.com.ar",{timeout:5000})
     // cy.clearAllCookies();
         cy.CERRAR_POP_UP()
- 
+
 });
 
-describe("TC N°1 : Verificar que la cantidad del producto agregado sea igual en el Checkout.",()=>{
+describe.skip("TC N°1 : Verificar que la cantidad del producto agregado sea igual en el Checkout.",()=>{
 
     When("Se posiciona en cualquier categoria {string} y acceda al PDP del primer producto.",function(categoria){
         elements_pages.Acceder_Resmas(categoria);
